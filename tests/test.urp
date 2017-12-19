@@ -1,0 +1,6 @@
+#library ../src
+library $/uuid
+debug
+rewrite url Test/*
+
+test

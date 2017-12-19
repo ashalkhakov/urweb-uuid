@@ -1,0 +1,10 @@
+library config
+ffi uuid__FFI
+jsFunc Uuid__FFI.generate=UrWeb.UUID.generate
+file /xfZEOXWvra.js ../../js/uuidv4.js
+script /xfZEOXWvra.js
+file /qyPYtx.js ../../js/uuid__FFI.js
+script /qyPYtx.js
+link -lurweb_uuid
+
+uuid
