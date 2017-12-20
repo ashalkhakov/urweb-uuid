@@ -1,3 +1,9 @@
+val eq_option_uuid : eq (option Uuid.uuid) =
+	mkEq (fn x y =>
+             case (x, y) of
+                 (Some x, Some y) => (x = y)
+               | (_, _) => False)
+
 fun index () =
 id <- source None;
 return <xml>
@@ -26,6 +32,7 @@ return <xml>
     <p>Test cases</p>
     <p>Some UUID: {[@read Uuid.read_uuid "df7cca36-3d7a-40f4-8f06-ae03cc22f045"]}</p>
     <p>Nil UUID: {[@read Uuid.read_uuid "00000000-0000-0000-0000-000000000000"]}</p>
+    <p>True: {[@read Uuid.read_uuid "df7cca36-3d7a-40f4-8f06-ae03cc22f045" = @read Uuid.read_uuid "DF7CCA36-3D7A-40F4-8F06-AE03CC22F045"]}</p>
     <p>Nothing: {[@read Uuid.read_uuid ""]}</p>
   </body>
 </xml>

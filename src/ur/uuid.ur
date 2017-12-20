@@ -20,6 +20,9 @@ fun parse_uuid s =
             val xd =
                 strall isxdigit
 
+            (* canonicalize (to simplify equality checks, etc.) *)
+            val s = String.mp tolower s
+
             val a = substring s 0 8
             val _x = (strsub s 8) = #"-"
             val b = substring s 9 4
